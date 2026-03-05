@@ -144,7 +144,7 @@ export const About = () => {
                   <span className="text-3xl font-bold text-white">SV</span>
                 </div>
                 <h4 className="text-xl font-bold text-[#003366] mb-2">
-                  Shyan Verastegui K.
+                  Shyan Verastegui
                 </h4>
                 <p className="text-[#4080B0] font-semibold mb-3">
                   Project Manager

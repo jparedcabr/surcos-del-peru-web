@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from './ui/button';
-import { Mail, Phone, MapPin, MessageCircle, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, Globe, Send } from 'lucide-react';
 
 export const Contact = () => {
   const handleWhatsApp = () => {
@@ -8,7 +8,7 @@ export const Contact = () => {
   };
 
   const handleEmail = () => {
-    window.location.href = 'mailto:jparedes@surcosperu.com?subject=Consulta sobre servicios de TI';
+    window.location.href = 'mailto:ventas@surcosperu.com?subject=Consulta sobre servicios de TI';
   };
 
   return (
@@ -60,7 +60,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#003366] mb-1">Email</h4>
-                  <p className="text-gray-600">jparedes@surcosperu.com</p>
+                  <p className="text-gray-600">ventas@surcosperu.com</p>
                   <p className="text-sm text-gray-500">Respuesta en 24 horas</p>
                 </div>
               </div>
@@ -114,30 +114,64 @@ export const Contact = () => {
             </div>
           </div>
 
-          {/* Right Side - Image/Visual */}
+          {/* Right Side - Formspree Form */}
           <div className="relative">
-            <div className="relative z-10">
-              <img 
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
-                alt="Contacto Surcos del Peru"
-                className="rounded-2xl shadow-2xl"
-              />
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 relative z-10">
+              <h3 className="text-2xl font-bold text-[#003366] mb-6">Envíanos un mensaje</h3>
+              
+              <form action="https://formspree.io/f/xlgprddb" method="POST" className="space-y-6">
+                <div>
+                  <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                  <input 
+                    type="text" 
+                    name="nombre" 
+                    id="nombre" 
+                    required 
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#4080B0] focus:border-transparent outline-none transition-all" 
+                    placeholder="Tu nombre" 
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+                  <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    required 
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#4080B0] focus:border-transparent outline-none transition-all" 
+                    placeholder="tu@empresa.com" 
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="mensaje" className="block text-sm font-medium text-gray-700 mb-2">Mensaje</label>
+                  <textarea 
+                    name="mensaje" 
+                    id="mensaje" 
+                    rows="4" 
+                    required 
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#4080B0] focus:border-transparent outline-none transition-all" 
+                    placeholder="¿En qué podemos ayudarte?"
+                  ></textarea>
+                </div>
+                
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full bg-[#003366] hover:bg-[#002244] text-white text-lg mt-4"
+                >
+                  <Send className="w-5 h-5 mr-2" />
+                  Enviar Consulta
+                </Button>
+              </form>
             </div>
+            
             {/* Decorative Elements */}
             <div className="absolute -z-10 top-10 right-10 w-72 h-72 bg-[#4080B0] rounded-full opacity-5 blur-3xl"></div>
             <div className="absolute -z-10 bottom-10 left-10 w-64 h-64 bg-[#003366] rounded-full opacity-5 blur-3xl"></div>
-
-            {/* Info Box */}
-            <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-xl border-l-4 border-[#4080B0]">
-              <h4 className="font-bold text-[#003366] mb-2">
-                Reunión Discovery Gratuita
-              </h4>
-              <p className="text-sm text-gray-600">
-                En esta reunión analizaremos tus necesidades actuales y diseñaremos 
-                una propuesta personalizada para impulsar el crecimiento de tu empresa.
-              </p>
-            </div>
           </div>
+
         </div>
       </div>
     </section>
