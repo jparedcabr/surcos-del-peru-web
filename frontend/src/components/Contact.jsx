@@ -73,7 +73,7 @@ export const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-[#003366] mb-1">Ubicación</h4>
-                  <p className="text-gray-600">Lima, Perú</p>
+                  <p className="text-gray-600">Av. 28 de Julio 124</p>
                   <p className="text-sm text-gray-500">Presencia en Perú y España</p>
                 </div>
               </div>
